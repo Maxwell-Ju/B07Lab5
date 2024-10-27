@@ -1,5 +1,5 @@
 Person:
 Related Issue:
-Changes Propsed:
+Changes Proposed:
 Type Of Change:
 Self Code Reivew:
