@@ -1,4 +1,4 @@
-package B07Lab5;
+package lab5;
 
 public class Quadrilateral{
     //The absolute location doesnt matter, they just have to be arranged like this relatively
@@ -22,14 +22,14 @@ public class Quadrilateral{
     public double calculateAngleB(Point a, Point b, Point c){
         Point vecBA = new Point(a.x - b.x, a.y - b.y);
         Point vecBC = new Point(c.x - b.x, c.y - b.y);
-        double dotProduct = vecBA.x * vecBC.x + vecBA.y * vecBC.x;
+        double dotProduct = vecBA.x * vecBC.x + vecBA.y * vecBC.y;
         Point origin = new Point(0, 0);
         return Math.acos(dotProduct / origin.distance(vecBA) / origin.distance(vecBC));
     }
 
     public boolean isSquare(){ //Allows a small margin of error for floating point / double inaccuracy
-        if (Math.abs(calculateAngleB(topLeft, bottomLeft, bottomRight) - 90) > 0.01) return false;
-        if (Math.abs(calculateAngleB(topLeft, topRight, bottomRight) - 1) > 0.01) return false;
+        if (Math.abs(calculateAngleB(topLeft, bottomLeft, bottomRight) - Math.PI/2.0) > 0.01) return false;
+        if (Math.abs(calculateAngleB(topLeft, topRight, bottomRight) - Math.PI/2.0) > 0.01) return false;
 
         double leftSideLength = topLeft.distance(bottomLeft);
         double bottomSideLength = bottomLeft.distance(bottomRight);
