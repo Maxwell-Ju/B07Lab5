@@ -1,4 +1,4 @@
-package B07Lab5.src.lab5;
+package lab5;
 
 import static org.junit.jupiter.api.Assertions.;
 
